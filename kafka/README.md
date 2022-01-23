@@ -29,3 +29,7 @@ Start by reading our guidelines on contributing to this project found here.
 ## License
 
 This Docker image is licensed under the Apache 2 license. For more information on the licenses for each of the individual Confluent Platform components packaged in this image, please refer to the respective [Confluent Platform documentation](https://docs.confluent.io/platform/current/installation/docker/image-reference.html).
+
+Manually build docker image
+
+docker build -f Dockerfile.ubi8 --platform linux/arm64 --build-arg PROJECT_VERSION='7.0.1' --build-arg ARTIFACT_ID='cp-kafka' --build-arg CONFLUENT_VERSION='7.0.1' --build-arg CONFLUENT_PACKAGES_REPO='https://packages.confluent.io/rpm/7.0' --build-arg CONFLUENT_VERSION='7.0.1' -t confluentinc/cp-kafka:ubi8-7.0.1 .
